@@ -1,52 +1,73 @@
-# 🌤️ Weather App
+# React + TypeScript + Vite
 
-A modern weather application built with React, TypeScript, and Vite.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-[![React](https://img.shields.io/badge/React-18+-61DAFB?style=flat-square&logo=react)](https://react.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
-[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+Currently, two official plugins are available:
 
-## ✨ Features
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-- 🔍 Real-time weather search by city
-- 🌡️ Temperature, humidity, and wind speed
-- 🎨 Weather icons
-- 📱 Responsive design
+## React Compiler
 
-## 🚀 Installation
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-```bash
-git clone https://github.com/SobhanHaerizadeh/weather-app
-cd weather-app
-npm install
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-## 🔧 Setup
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-1. Get your [OpenWeatherMap API Key](https://openweathermap.org/api)
-2. Add the API key to `src/App.tsx`
-3. Run `npm run dev`
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-## 📦 Scripts
-
-```bash
-npm run dev      # Development Server
-npm run build    # Production Build
-npm run preview  # Preview Build
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
-
-## 🛠️ Tech Stack
-
-- React 18
-- TypeScript
-- Vite
-- CSS3
-
-## 👤 Author
-
-**Sobhan Haerizadeh** - Web Developer & Trainee IT Specialist for Application Development
-
-[![GitHub](https://img.shields.io/badge/GitHub-SobhanHaerizadeh-181717?style=flat-square&logo=github)](https://github.com/SobhanHaerizadeh)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-sobhanhaerizadeh-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/sobhanhaerizadeh)
-[![Website](https://img.shields.io/badge/Website-sobhanhaerizadeh.de-7c3aed?style=flat-square&logo=globe)](https://sobhanhaerizadeh.de)
-[![Website](https://img.shields.io/badge/Website-sobhan.dev-7c3aed?style=flat-square&logo=globe)](https://sobhan.dev)
