@@ -15,3 +15,9 @@ interface WeatherData {
         speed: number;
     }
 }
+
+interface WeatherState {
+    data: WeatherData | null;
+    loading: boolean;
+    error: string | null; // Error Message 
+}
