@@ -1,10 +1,15 @@
 import {SearchBar} from './components/SearchBar';
-import { WeatherDay } from './components/WeatherDisplay';
+import { WeatherDisplay } from './components/WeatherDisplay';
+import './App.css';
 
-<SearchBar
 
-    onSearch={handleSearch}
-    loading={isLoading}
+function App(){
+    return(
+    <div>
+      <SearchBar onSearch={() => {}} loading={false} />
+      <WeatherDisplay data={null} error={null} />
+    </div>
+    )  
+}
 
-/>
-<WeatherDay />
+export default App;
