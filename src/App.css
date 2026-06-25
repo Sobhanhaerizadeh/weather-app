@@ -86,6 +86,29 @@ body::before {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+.lang-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--text-muted);
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: color .2s, border-color .2s, transform .2s;
+  letter-spacing: 0.03em;
+}
+
+.lang-toggle:hover {
+  color: var(--text);
+  border-color: var(--cool);
+  transform: translateY(-1px);
+}
+
 .app h1 {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 1.7rem;
