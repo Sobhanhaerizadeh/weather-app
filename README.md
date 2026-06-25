@@ -1,10 +1,15 @@
 # 🌤️ Weather App
 
+<div align="center">
+<img width="689" height="624" alt="Sobhan Hearizadeh - weather app" src="https://github.com/user-attachments/assets/db7c4090-eede-4077-a0d1-17250435ef45" />
+
 A modern weather application built with React, TypeScript, and Vite.
 
 [![React](https://img.shields.io/badge/React-18+-61DAFB?style=flat-square&logo=react)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+
+</div>
 
 ## ✨ Features
 
@@ -12,6 +17,11 @@ A modern weather application built with React, TypeScript, and Vite.
 - 🌡️ Temperature, humidity, and wind speed
 - 🎨 Weather icons
 - 📱 Responsive design
+- 🌐 Language switch between English and Deutsch
+
+<div align="center">
+<img width="504" height="665" alt="Sobhan Hearizadeh - weather app" src="https://github.com/user-attachments/assets/1ce583ca-45b2-4eae-aab6-7134d824e940" />
+</div>
 
 ## 🚀 Installation
 
