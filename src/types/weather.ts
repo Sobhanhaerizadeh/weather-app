@@ -16,7 +16,7 @@ export interface WeatherData {
     }
 }
 
-interface WeatherState {
+export interface WeatherState {
     data: WeatherData | null;
     loading: boolean;
     error: string | null; // Error Message 
